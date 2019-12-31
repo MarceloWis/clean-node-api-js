@@ -18,7 +18,7 @@ export default class LoginRouter {
     }
     this.authUserCase.auth(email, password)
     return {
-      statusCode: 401
+      statusCode: HttpResponse.unauthorizedError().statusCode
     }
   }
 }
