@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon",
     "build": "sucrase ./src -d ./dist --transforms imports",
-    "test": "jest"
+    "test": "jest --watchAll",
+    "test:staged": "jest"
   },
   "standard": {
     "env": [
