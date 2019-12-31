@@ -17,8 +17,7 @@ export default class LoginRouter {
       return HttpResponse.badRequest('password')
     }
     this.authUserCase.auth(email, password)
-    return {
-      statusCode: HttpResponse.unauthorizedError().statusCode
-    }
+
+    return HttpResponse.unauthorizedError()
   }
 }

@@ -88,6 +88,6 @@ describe('Login Router', () => {
     const httpResponse = sut.route(httpRequest)
 
     expect(httpResponse.statusCode).toBe(401)
-    expect(httpResponse.body).toEqual(new UnauthorizedError().body)
+    expect(httpResponse.body).toEqual(new UnauthorizedError())
   })
 })
