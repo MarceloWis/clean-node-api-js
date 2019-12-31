@@ -5,7 +5,7 @@ export default class LoginRouter {
     this.authUserCase = authUserCase
   }
 
-  route (httpRequest) {
+  async route (httpRequest) {
     try {
       const { email, password } = httpRequest.body
       if (!email) {
