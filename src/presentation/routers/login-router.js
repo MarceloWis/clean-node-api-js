@@ -6,7 +6,7 @@ export default class LoginRouter {
   }
 
   route (httpRequest) {
-    if (!httpRequest || !httpRequest.body) {
+    if (!httpRequest || !httpRequest.body || !this.authUserCase || !this.authUserCase.auth) {
       return HttpResponse.serverError()
     }
     const { email, password } = httpRequest.body
@@ -16,6 +16,7 @@ export default class LoginRouter {
     if (!password) {
       return HttpResponse.badRequest('password')
     }
+
     this.authUserCase.auth(email, password)
 
     return HttpResponse.unauthorizedError()
